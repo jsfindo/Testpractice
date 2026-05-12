@@ -9,3 +9,12 @@ export const reversestring = (str) =>{
 
 
 }
+
+export const caesarCipher = (str, shift) => {
+  return str.replace(/[a-z]/gi, (char) => {
+    const start = char <= 'Z' ? 65 : 97; // ASCII for 'A' or 'a'
+    return String.fromCharCode(
+      ((char.charCodeAt(0) - start + shift) % 26) + start
+    );
+  });
+};
